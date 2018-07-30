@@ -28,7 +28,7 @@ class PhoneInfo extends Component {
     handleChange = (e) => {
         // onChange 이벤트 발생시 호출되는 함수
         const { name, value } = e.target;
-        this.state({
+        this.setState({
             [name]: value
         });
     }
@@ -46,7 +46,7 @@ class PhoneInfo extends Component {
         if (prevState.editing && !this.state.editing) {
             onUpdate(info.id, {
                 name: this.state.name,
-                phone: this.state.phone
+            phone: this.state.phone
             });
         }
     }
