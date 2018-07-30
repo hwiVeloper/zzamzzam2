@@ -36,16 +36,19 @@ class App extends Component {
         const { information } = this.state;
         this.setState({
             information : information.map(
-                info => id === info.id ? { ...info, ...data } // 새 객체를 만들어 기존값과 대체값으로 덮어쓴다.
+                info => id === info.id
+                ? { ...info, ...data } // 새 객체를 만들어 기존값과 대체값으로 덮어쓴다.
                 : info // 기존값 유지
             )
         })
     }
     render() {
+        const { information } = this.state;
         return (
             <div>
                 <PhoneForm onCreate={this.handleCreate}/>
-                <PhoneInfoList data={this.state.information}
+                <PhoneInfoList
+                    data={information}
                     onRemove={this.handleRemove}
                     onUpdate={this.handleUpdate}/>
             </div>
