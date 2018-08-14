@@ -10,7 +10,7 @@ class TodoItemList extends React.Component {
         const { todos, onToggle, onRemove } = this.props;
 
         const todoList = todos.map(
-            ({id, text, checked}) => (
+            ({id, text, checked, color}) => (
                 <TodoItem
                     id={id}
                     text={text}
@@ -18,6 +18,7 @@ class TodoItemList extends React.Component {
                     onToggle={onToggle}
                     onRemove={onRemove}
                     key={id}
+                    color={color}
                 />
             )
         );
