@@ -4,7 +4,6 @@ import StyledButton from './components/StyledButton';
 
 class App extends Component {
   render() {
-    const isBlue = false;
     return (
       <div>
         <Button>Button</Button>
