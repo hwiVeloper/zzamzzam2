@@ -1,10 +1,32 @@
-let h1 = React.createElement('h1', null, 'Hello world!')
+// let h1 = React.createElement('h1', null, 'Hello world!')
 class HelloWorld extends React.Component {
     render() {
-        return React.createElement('div', null, h1, h1)
+        return React.createElement(
+            'h1',
+            this.props,
+            'Hello' + this.props.frameworkName + ' world!!!'
+        )
     }
 }
 ReactDOM.render(
-    React.createElement(HelloWorld, null),
-    document.getElementById('content')
+    React.createElement(
+        'div',
+        null,
+        React.createElement(HelloWorld, {
+            id: 'ember',
+            frameworkName: 'Ember.js',
+            title: 'A framework for creating ambitious web applications.'
+        }),
+        React.createElement(HelloWorld, {
+            id: 'backbone',
+            frameworkName: 'Backbone.js',
+            title: 'Backbone.js gives structure to web applications.'
+        }),
+        React.createElement(HelloWorld, {
+            id: 'angular',
+            frameworkName: 'Angular.js',
+            title: 'Supergeroic JavaScript MVW Framework.'
+        })
+    ),
+    document.querySelector('#content')
 )
