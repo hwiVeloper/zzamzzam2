@@ -1,7 +1,7 @@
 let helloWorldReactElement = React.createElement(
     'h1',
     null,
-    'Hello world!'
+    'Hello World~'
 );
 class HelloWorld extends React.Component {
     render() {
@@ -10,7 +10,7 @@ class HelloWorld extends React.Component {
             null,
             helloWorldReactElement,
             helloWorldReactElement
-            );
+        );
     }
 }
-ReactDOM.render(React.createElement(HelloWorld, null), document.getElementById('content'));    
+ReactDOM.render(React.createElement(HelloWorld, null), document.getElementById('content'));
