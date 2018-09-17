@@ -8,6 +8,11 @@ class HelloWorld extends React.Component {
         return React.createElement(
             'div',
             null,
+            React.createElement(
+                'h1',
+                null,
+                'Added!'
+            ),
             helloWorldReactElement,
             helloWorldReactElement
         );
