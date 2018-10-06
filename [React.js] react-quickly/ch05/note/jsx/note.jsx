@@ -1,0 +1,27 @@
+class Note extends React.Component {
+    confirmLeave(e) {
+        let confirmationMessage = '정말 닫나요?'
+        e.returnValue = confirmationMessage
+        return confirmationMessage
+    }
+
+    componentDidMount() {
+        console.log('beforeunload 이벤트에 confirmLeave 이벤트 리스너를 등록한다.')
+        window.addEventListener('beforeunload', this.confirmLeave)
+    }
+
+    componentWillUnmount() {
+        console.log('beforeunload 이벤트에 confirmLeave 이벤트 리스너를 제거한다.')
+        window.removeEventListener('beforeunload', this.confirmLeave)
+    }
+
+    render() {
+        console.log('!!! Render !!!')
+        return (
+            <div>
+                <p>부모 컴포넌트는 {this.props.secondsLeft}초 뒤에 제거된다.</p>
+                <input type="text"/>
+            </div>
+        )
+    }
+}
