@@ -3,6 +3,10 @@ class Content extends React.Component {
         super(props)
         this.handleRadio = this.handleRadio.bind(this)
         this.handleCheckbox = this.handleCheckbox.bind(this)
+        this.handleSelecthange = this.handleSelecthange.bind(this)
+        this.handleInput = this.handleInput.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleFirstNameChange = this.handleFirstNameChange.bind(this)
 
         this.state = {
             radioGroup: {
@@ -15,7 +19,9 @@ class Content extends React.Component {
                 react: true,
                 express: false,
                 mongodb: false
-            }
+            },
+            selectedValue: 'node',
+            firstName: ''
         }
     }
 
@@ -29,6 +35,28 @@ class Content extends React.Component {
         let obj = Object.assign(this.state.checkboxGroup)
         obj[event.target.value] = event.target.checked
         this.setState({checkboxGroup: obj})
+    }
+
+    handleSelecthange(event) {
+        this.setState({selectedValue: event.target.value})
+    }
+
+    handleChange(event) {
+        console.log(event.target.value)
+    }
+
+    handleFirstNameChange(event) {
+        this.setState({firstName: event.target.value})
+    }
+
+    handleInput(event) {
+        console.log(event.target.value)
+    }
+
+    handleSubmit() {
+        fetch(this.props['data-url'], {method: 'POST', body: JSON.stringify(this.state)})
+        .then((response) => {return response.text()})
+        .then((data) => {console.log('Submitted: ', data)})
     }
 
     render() {
@@ -96,6 +124,31 @@ class Content extends React.Component {
                     onChange={this.handleCheckbox}/> MondoDB <br />
                 {/* Checkbox END */}
                 <hr/>
+                {/* Select START */}
+                <select
+                    value={this.state.selectedValue}
+                    onChange={this.handleSelecthange}>
+                    <option value="ruby">Ruby</option>
+                    <option value="node">Node</option>
+                    <option value="python">Python</option>
+                </select>
+                {/* Select END */}
+                <hr/>
+                {/* Input START */}
+                <input
+                    type="text"
+                    onChange={this.handleChange}
+                    defaultValue="zziller03@gmail.com"/>
+                {/* Input END */}
+                <hr/>
+                <input
+                    type="text"
+                    name="firstName"
+                    onChange={this.handleFirstNameChange}/>
+                <input
+                    type="button"
+                    onClick={this.handleSubmit}
+                    value="Submit"/>
             </form>
         )
     }
