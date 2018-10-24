@@ -6,7 +6,7 @@ import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
 
 const ViewerTemplate = ({viewer, spaceNavigator}) => (
-    <div className="{cx('viewer-template')}">
+    <div className={cx('viewer-template')}>
         <header>
             Astronomy Picture of the Day
         </header>
