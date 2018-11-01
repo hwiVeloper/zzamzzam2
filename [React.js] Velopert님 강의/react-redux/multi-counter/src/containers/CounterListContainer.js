@@ -5,7 +5,7 @@ import {getRandomColor} from '../utils';
 
 // store 안의 state를 props로 연결
 const mapStateToProps = (state) => ({
-    counters: state.counters
+    counters: state.get('counters')
 });
 
 // 액션생성 -> dispatch함수 만든 후 -> props로 연결
