@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+
 import * as counterActions from './modules/counter';
 import * as postActions from './modules/posts';
 // import axios from 'axios';
@@ -13,7 +14,7 @@ class App extends Component {
 
         // 컴포넌트가 처음 마운트 될 때 현재 number 를 postId 로 사용하여 포스트 내용을 불러옵니다.
         const {number, PostActions} = this.props;
-        PostActions.getPost(number);
+        this.getPost(number);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -21,7 +22,18 @@ class App extends Component {
 
         // 현재 number와 새로 받을 number가 다를 경우에 요청을 시도
         if (this.props.number !== nextProps.number) {
-            PostActions.getPost(nextProps.number);
+            this.getPost(nextProps.number);
+        }
+    }
+
+    getPost = async (postId) => {
+        const {PostActions} = this.props;
+
+        try {
+            await PostActions.getPost(postId);
+            console.log("요청이 완료된 후 실행.");
+        } catch (e) {
+            console.log("에러 발생!!!");
         }
     }
 
