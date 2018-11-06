@@ -6,9 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/webpack -w",
-    "i": "rm -rf ./node_modules && npm cache clean && npm install",
-    "wds": "./node_modules/.bin/webpack-dev-server --config webpack.dev.config.js",
-    "wds-cli": "./node_modules/.bin/webpack-dev-server --inline --hot --module-bind 'css=style-loader!css-loader' --module-bind 'jsx-react-hot-loader!babel-loader' --config webpack.dev-cli.config.js"
+    "i": "rm -rf ./node_modules && npm cache clean && npm install"
   },
   "author": "Azat Mardan",
   "license": "MIT",
