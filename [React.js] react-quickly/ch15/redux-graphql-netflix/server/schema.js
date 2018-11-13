@@ -1,4 +1,5 @@
 const {
+    graphql,
     GraphQLSchema,
     GraphQLObjectType,
     GraphQLList,
@@ -8,7 +9,7 @@ const {
 } = require('graphql')
 const movies = require('./movies.json')
 
-const movie =  new graphql.GraphQLObjectType({
+const movie =  new GraphQLObjectType({
     name: 'Movie',
     fields: {
         title: {

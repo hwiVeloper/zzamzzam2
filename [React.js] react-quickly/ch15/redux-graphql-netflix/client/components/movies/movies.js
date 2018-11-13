@@ -2,6 +2,8 @@ const React = require('react')
 const {connect} = require('react-redux')
 const {Link} = require('react-router')
 const movies = require('../../movies.json') // sample data
+const axios = require('axios')
+const clean = require('clean-tagged-string').default
 const {
     fetchMoviesActionCreator
 } = require('modules/movies.js')
@@ -9,7 +11,18 @@ const styles = require('./movies.css')
 
 class Movies extends React.Component {
     componentWillMount() {
-        this.props.fetchMovies(movies) // movies 데이터와 함께 fetchMoviesActionCreator 액션 전달
+        // this.props.fetchMovies(movies) // movies 데이터와 함께 fetchMoviesActionCreator 액션 전달
+        const query = clean`{
+            movies {
+                title,
+                cover
+            }
+        }`
+
+        axios.get(`/q?query=${query}`)
+        .then(response => {
+            this.props.fetchMovies(response)
+        })
     }
 
     render() {

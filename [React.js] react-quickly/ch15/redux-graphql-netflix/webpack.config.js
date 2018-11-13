@@ -5,26 +5,23 @@ module.exports = {
   entry: {
     index: [
       'babel-polyfill',
-      './src/index.js'
+      './client/index.js'
     ]
   },
   output: {
-    path: path.join(__dirname, 'build'),
+    path: path.join(__dirname, 'build', 'public'),
     filename: '[name].js'
   },
   target: 'web',
   module: {
     loaders: [{
       loader: 'babel-loader',
-      include: [path.resolve(__dirname, 'src')],
+      include: [path.resolve(__dirname, 'client')],
       exclude: /node_modules/,
       test: /\.js$/,
       query: {
         presets: ['react', 'es2015', 'stage-0']
       }
-    }, {
-      loader: 'json-loader',
-      test: /\.json$/
     }, {
       loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[local]__[hash:base64:5]'),
       test: /\.css$/,
@@ -34,7 +31,7 @@ module.exports = {
   resolve: {
     modulesDirectories: [
       './node_modules',
-      './src'
+      './client'
     ]
   },
   plugins: [

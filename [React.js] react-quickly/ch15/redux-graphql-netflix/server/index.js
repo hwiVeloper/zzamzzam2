@@ -18,6 +18,10 @@ app.use('/dist',
     express.static(path.resolve(PWD, 'build', 'public'))
 )
 
+app.use('/images',
+    express.static(path.resolve(PWD, 'build', 'public', 'images'))
+)
+
 app.use('*', (req, res) =>{
     res.sendFile('index.html', {
         root: PWD
