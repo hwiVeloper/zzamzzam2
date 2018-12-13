@@ -3,8 +3,15 @@ import React, {Component} from 'react';
 const withSplitting = getComponent => {
     // getComponent? : () => import('./SplitMe')의 형태로 전달
     class WithSplitting extends Component {
+        static Splitted = null;
+        static preload() {
+            // preload가 호출되면 위 static Splitted가 설정됨.
+            getComponent().then(({default: Splitted}) => {
+                WithSplitting.Splitted = Splitted;
+            })
+        }
         state = {
-            Splitted: null
+            Splitted: WithSplitting.Splitted
         };
 
         constructor(props) {
