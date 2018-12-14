@@ -38,6 +38,11 @@ const Menu = () => {
             Posts
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/users" activeStyle={activeStyle}>
+            Users
+          </NavLink>
+        </li>
       </ul>
       <hr />
     </div>
