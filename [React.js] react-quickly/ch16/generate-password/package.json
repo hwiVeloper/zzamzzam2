@@ -1,0 +1,15 @@
+{
+    "name": "jest-study",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "start": "node -e \"console.log(require('./generate-password.js')())\""
+    },
+    "author": "hwiveloper",
+    "license": "MIT",
+    "devDependencies": {
+        "jest-cli": "19.0.2"
+    }
+}
