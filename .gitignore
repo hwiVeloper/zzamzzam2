@@ -22,4 +22,7 @@ yarn-debug.log*
 yarn-error.log*
 
 bundle.js*
+
+yarn.lock
+package-lock.json
 ################################################################################
