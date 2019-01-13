@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/webpack -w",
+    "start": "./node_modules/.bin/webpack && node-dev ."
   },
   "author": "hwiveloper",
   "license": "MIT",
@@ -19,6 +21,11 @@
       "browser": true
     }
   },
+  "babel": {
+    "presets": [
+      "react"
+    ]
+  },
   "dependencies": {
     "babel-register": "^6.26.0",
     "body-parser": "^1.18.3",
@@ -27,15 +34,22 @@
     "express": "^4.16.4",
     "express-validator": "^5.3.1",
     "hbs": "^4.0.1",
-    "mongodb": "^3.1.10",
+    "mongodb": "2.2.25",
     "morgan": "^1.9.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   },
   "devDependencies": {
+    "axios": "^0.18.0",
+    "babel-core": "6.10.4",
+    "babel-jest": "13.2.2",
+    "babel-loader": "6.4.1",
+    "babel-preset-react": "6.5.0",
     "eslint": "^5.12.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.12.3"
+    "eslint-plugin-react": "^7.12.3",
+    "node-dev": "^3.1.3",
+    "webpack": "2.4.1"
   }
 }
