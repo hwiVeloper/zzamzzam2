@@ -1,0 +1,61 @@
+{
+  "name": "password",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "jest",
+    "test-watch": "jest --watch",
+    "build-watch": "./node_modules/.bin/webpack -w",
+    "build": "./node_modules/.bin/webpack"
+  },
+  "author": "hwiveloper",
+  "license": "MIT",
+  "eslintConfig": {
+    "extends": "airbnb",
+    "rules": {
+      "react/prefer-stateless-function": 0,
+      "react/jsx-filename-extension": 0,
+      "react/jsx-one-expression-per-line": 0,
+      "react/destructuring-assignment": 0,
+      "class-methods-use-this": 0,
+      "no-unused-expressions": 0,
+      "no-useless-escape": 1,
+      "semi": 0,
+      "quotes": [
+        "error",
+        "single"
+      ]
+    },
+    "env": {
+      "browser": true
+    }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "babel": {
+    "presets": [
+      "react"
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "6.10.4",
+    "babel-loader": "6.4.1",
+    "babel-preset-react": "6.5.0",
+    "eslint": "5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "jest-cli": "19.0.2",
+    "react": "15.5.4",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "15.5.4",
+    "react-test-renderer": "15.5.4",
+    "webpack": "2.4.1",
+    "webpack-cli": "^2.1.5",
+    "webpack-dev-server": "1.14.0"
+  }
+}
