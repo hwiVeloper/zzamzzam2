@@ -1,5 +1,8 @@
 {
     "editor.formatOnSave": true,
     "javascript.format.enable": false,
-    "prettier.eslintIntegration": true
+    "prettier.eslintIntegration": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": false,
+    "editor.fontFamily": "'나눔고딕코딩', Menlo, Monaco, 'Courier New', monospace"
 }
